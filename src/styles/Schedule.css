@@ -1,6 +1,17 @@
 .schedule {
   padding: 120px 20px 80px;
-  background-color: #fefae0;
+  background-color: #1a1a1a;
+  position: relative;
+}
+
+.schedule::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d4af37, transparent);
 }
 
 .container {
@@ -10,20 +21,46 @@
 
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
-  color: #5c5c5c;
-  margin-bottom: 50px;
-  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #f0f0f0;
+  margin-bottom: 60px;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, #d4af37, #f5cc5d);
 }
 
 .venue-info {
   display: flex;
   gap: 40px;
-  margin-bottom: 60px;
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 70px;
+  background-color: #252525;
+  padding: 35px;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.venue-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.1), transparent 70%);
+  pointer-events: none;
 }
 
 .venue-details {
@@ -31,43 +68,95 @@
 }
 
 .venue-details h2 {
-  color: #d4a373;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
+  color: #d4af37;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.venue-details h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #d4af37;
 }
 
 .venue-name {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #f0f0f0;
 }
 
 .venue-address, .venue-phone {
-  color: #666;
-  margin-bottom: 10px;
+  color: #cccccc;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
 }
 
 .venue-map {
   flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.venue-map:hover {
+  transform: scale(1.02);
 }
 
 .map-placeholder {
-  background-color: #f8f8f8;
-  height: 200px;
+  background-color: #1a1a1a;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aaa;
-  border-radius: 10px;
+  color: #666;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.map-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(212, 175, 55, 0.1),
+    rgba(212, 175, 55, 0.05),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+  transform: rotate(30deg);
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateY(0) rotate(30deg);
+  }
+  100% {
+    transform: translateY(100%) rotate(30deg);
+  }
 }
 
 .schedule-timeline {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 .schedule-item {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   position: relative;
 }
 
@@ -76,9 +165,9 @@
   position: absolute;
   left: 120px;
   top: 0;
-  bottom: -30px;
-  width: 2px;
-  background-color: #d4a373;
+  bottom: -40px;
+  width: 1px;
+  background: linear-gradient(to bottom, #d4af37, rgba(212, 175, 55, 0.3));
 }
 
 .schedule-item:last-child::before {
@@ -87,19 +176,28 @@
 
 .schedule-time {
   width: 120px;
-  padding-right: 20px;
-  font-weight: bold;
-  color: #d4a373;
+  padding-right: 30px;
+  font-weight: 500;
+  color: #d4af37;
   text-align: right;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
 }
 
 .schedule-content {
   flex: 1;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
+  background-color: #252525;
+  padding: 25px;
+  border-radius: 8px;
   position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .schedule-content::before {
@@ -109,50 +207,91 @@
   top: 20px;
   width: 20px;
   height: 20px;
-  background-color: #d4a373;
+  background: linear-gradient(135deg, #d4af37, #f5cc5d);
   border-radius: 50%;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 .schedule-content h3 {
   margin-top: 0;
-  color: #5c5c5c;
-  margin-bottom: 10px;
+  color: #f0f0f0;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
 }
 
 .schedule-content p {
-  color: #666;
+  color: #cccccc;
   margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.additional-info {
+  margin-top: 80px;
 }
 
 .additional-info h2 {
   text-align: center;
-  color: #5c5c5c;
-  margin-bottom: 30px;
-  font-size: 1.8rem;
+  color: #f0f0f0;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.additional-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: #d4af37;
 }
 
 .info-cards {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   justify-content: space-between;
 }
 
 .info-card {
   flex: 1;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
+  background-color: #252525;
+  padding: 30px;
+  border-radius: 8px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #d4af37, #f5cc5d);
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .info-card h3 {
-  color: #d4a373;
-  margin-bottom: 15px;
+  color: #d4af37;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
 }
 
 .info-card p {
-  color: #666;
+  color: #cccccc;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
@@ -166,6 +305,7 @@
 
   .schedule-time {
     width: 80px;
+    font-size: 0.85rem;
   }
 
   .info-cards {
