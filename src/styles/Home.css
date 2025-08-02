@@ -1,0 +1,131 @@
+.home {
+  padding-top: 80px; /* To account for the fixed navigation */
+}
+
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.wedding-date {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.rsvp-button {
+  background-color: #d4a373;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.rsvp-button:hover {
+  background-color: #c08c5d;
+}
+
+.welcome-section {
+  padding: 80px 20px;
+  background-color: #fefae0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.welcome-section h2 {
+  color: #5c5c5c;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.welcome-section p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.countdown {
+  margin-top: 50px;
+}
+
+.countdown h3 {
+  color: #5c5c5c;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.countdown-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 100px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.count {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d4a373;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .countdown-timer {
+    flex-wrap: wrap;
+  }
+
+  .countdown-item {
+    min-width: 80px;
+  }
+}

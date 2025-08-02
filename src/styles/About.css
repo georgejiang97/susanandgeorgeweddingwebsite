@@ -1,0 +1,138 @@
+.about {
+  padding: 120px 20px 80px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #5c5c5c;
+  margin-bottom: 50px;
+  font-family: 'Great Vibes', cursive;
+}
+
+.couple-intro {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+.couple-photo {
+  flex: 1;
+}
+
+.photo-placeholder {
+  background-color: #f8f8f8;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+.couple-text {
+  flex: 1;
+}
+
+.couple-text h2 {
+  color: #d4a373;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.couple-text p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.timeline {
+  margin-top: 60px;
+}
+
+.timeline h2 {
+  text-align: center;
+  color: #5c5c5c;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 120px;
+  top: 0;
+  bottom: -30px;
+  width: 2px;
+  background-color: #d4a373;
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-date {
+  width: 120px;
+  padding-right: 20px;
+  font-weight: bold;
+  color: #d4a373;
+  text-align: right;
+}
+
+.timeline-content {
+  flex: 1;
+  background-color: #fefae0;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #d4a373;
+  border-radius: 50%;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  color: #5c5c5c;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  color: #666;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .couple-intro {
+    flex-direction: column;
+  }
+
+  .timeline-item::before {
+    left: 80px;
+  }
+
+  .timeline-date {
+    width: 80px;
+  }
+}

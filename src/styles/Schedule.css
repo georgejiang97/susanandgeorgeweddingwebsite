@@ -1,0 +1,174 @@
+.schedule {
+  padding: 120px 20px 80px;
+  background-color: #fefae0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #5c5c5c;
+  margin-bottom: 50px;
+  font-family: 'Great Vibes', cursive;
+}
+
+.venue-info {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.venue-details {
+  flex: 1;
+}
+
+.venue-details h2 {
+  color: #d4a373;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.venue-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.venue-address, .venue-phone {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.venue-map {
+  flex: 1;
+}
+
+.map-placeholder {
+  background-color: #f8f8f8;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border-radius: 10px;
+}
+
+.schedule-timeline {
+  margin-bottom: 60px;
+}
+
+.schedule-item {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.schedule-item::before {
+  content: '';
+  position: absolute;
+  left: 120px;
+  top: 0;
+  bottom: -30px;
+  width: 2px;
+  background-color: #d4a373;
+}
+
+.schedule-item:last-child::before {
+  display: none;
+}
+
+.schedule-time {
+  width: 120px;
+  padding-right: 20px;
+  font-weight: bold;
+  color: #d4a373;
+  text-align: right;
+}
+
+.schedule-content {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-content::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #d4a373;
+  border-radius: 50%;
+}
+
+.schedule-content h3 {
+  margin-top: 0;
+  color: #5c5c5c;
+  margin-bottom: 10px;
+}
+
+.schedule-content p {
+  color: #666;
+  margin-bottom: 0;
+}
+
+.additional-info h2 {
+  text-align: center;
+  color: #5c5c5c;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.info-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.info-card {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+  color: #d4a373;
+  margin-bottom: 15px;
+}
+
+.info-card p {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .venue-info {
+    flex-direction: column;
+  }
+
+  .schedule-item::before {
+    left: 80px;
+  }
+
+  .schedule-time {
+    width: 80px;
+  }
+
+  .info-cards {
+    flex-direction: column;
+  }
+}
