@@ -50,7 +50,7 @@ const RSVP: React.FC = () => {
   };
 
   return (
-    <div className="rsvp">
+    <div id="rsvp" className="rsvp">
       <div className="container">
         <h1 className="section-title">RSVP</h1>
 

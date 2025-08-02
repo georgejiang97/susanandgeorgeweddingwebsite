@@ -48,6 +48,14 @@ const Home: React.FC = () => {
     day: 'numeric'
   }).format(WEDDING_DATE);
 
+  const navigateToRSVP = () => {
+    // Logic to navigate to RSVP section
+    // This could be a link or a scroll to the RSVP section
+    const rsvpSection = document.getElementById('rsvp');
+    if (rsvpSection) {
+      rsvpSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   return (
     <div className="home">
       <div className="hero">
