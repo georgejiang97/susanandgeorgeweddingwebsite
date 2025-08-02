@@ -2,6 +2,14 @@ import React from 'react';
 import '../styles/Home.css';
 
 const Home: React.FC = () => {
+  const navigateToRSVP = () => {
+    // Logic to navigate to RSVP section
+    // This could be a link or a scroll to the RSVP section
+    const rsvpSection = document.getElementById('rsvp');
+    if (rsvpSection) {
+      rsvpSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   return (
     <div className="home">
       <div className="hero">
@@ -9,7 +17,7 @@ const Home: React.FC = () => {
           <h1>John & Sarah</h1>
           <h2>We're Getting Married</h2>
           <p className="wedding-date">June 15, 2024</p>
-          <button className="rsvp-button">RSVP Now</button>
+          <button className="rsvp-button" onClick={navigateToRSVP}>RSVP</button>
         </div>
       </div>
 
