@@ -20,7 +20,6 @@ const RSVP: React.FC = () => {
     name: '',
     email: '',
     attending: 'yes',
-    guests: '0',
     dietaryRestrictions: '',
     message: ''
   });
@@ -43,7 +42,6 @@ const RSVP: React.FC = () => {
       name: '',
       email: '',
       attending: 'yes',
-      guests: '0',
       dietaryRestrictions: '',
       message: ''
     });
@@ -118,22 +116,6 @@ const RSVP: React.FC = () => {
             {formData.attending === 'yes' && (
               <>
                 <div className="form-group">
-                  <label htmlFor="guests">Number of Additional Guests</label>
-                  <select
-                    id="guests"
-                    name="guests"
-                    value={formData.guests}
-                    onChange={handleChange}
-                  >
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                </div>
-
-                <div className="form-group">
                   <label htmlFor="dietaryRestrictions">Dietary Restrictions</label>
                   <input
                     type="text"
@@ -170,7 +152,7 @@ const RSVP: React.FC = () => {
           <p>
             If you have any questions about the wedding, please contact us at:
             <br />
-            <a href="mailto:johnandsarah@example.com">johnandsarah@example.com</a>
+            <a href="mailto:susanandgeorgewedding2026@gmail.com">susanandgeorgewedding2026@gmail.com</a>
           </p>
         </div>
       </div>
