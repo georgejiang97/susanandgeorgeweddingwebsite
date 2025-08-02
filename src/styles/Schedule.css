@@ -106,10 +106,6 @@
   transition: transform 0.3s ease;
 }
 
-.venue-map:hover {
-  transform: scale(1.02);
-}
-
 .map-placeholder {
   background-color: #1a1a1a;
   height: 250px;

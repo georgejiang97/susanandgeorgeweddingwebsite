@@ -10,13 +10,22 @@ const Schedule: React.FC = () => {
         <div className="venue-info">
           <div className="venue-details">
             <h2>Ceremony & Reception</h2>
-            <p className="venue-name">The Grand Ballroom</p>
-            <p className="venue-address">123 Wedding Lane, Celebration City</p>
-            <p className="venue-phone">(555) 123-4567</p>
+            <p className="venue-name">MAINSPACE | Canmore Wedding Venue + Event Space</p>
+            <p className="venue-address">102-709 Main Street, Canmore, AB T1W 2B2</p>
+            <p className="venue-phone">(403) 675-0333</p>
+            <p className="venue-website"><a href="https://www.mainspacecanmore.com" target="_blank" rel="noopener noreferrer">www.mainspacecanmore.com</a></p>
           </div>
           <div className="venue-map">
-            {/* Placeholder for map */}
-            <div className="map-placeholder">Map will be displayed here</div>
+            <iframe
+              src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Mainspace, Canmore&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              width="100%"
+              height="250"
+              style={{ border: 0, borderRadius: '8px' }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="MAINSPACE Canmore Map"
+            ></iframe>
           </div>
         </div>
 
@@ -25,7 +34,7 @@ const Schedule: React.FC = () => {
             <div className="schedule-time">3:00 PM</div>
             <div className="schedule-content">
               <h3>Guest Arrival</h3>
-              <p>Please arrive at the venue and be seated</p>
+              <p>Please arrive at MAINSPACE and be seated</p>
             </div>
           </div>
 
@@ -33,7 +42,7 @@ const Schedule: React.FC = () => {
             <div className="schedule-time">3:30 PM</div>
             <div className="schedule-content">
               <h3>Ceremony Begins</h3>
-              <p>The wedding ceremony will take place in the garden</p>
+              <p>The wedding ceremony will take place in the main hall</p>
             </div>
           </div>
 
@@ -49,7 +58,7 @@ const Schedule: React.FC = () => {
             <div className="schedule-time">5:30 PM</div>
             <div className="schedule-content">
               <h3>Reception</h3>
-              <p>Dinner, speeches, and celebration in the Grand Ballroom</p>
+              <p>Dinner, speeches, and celebration at MAINSPACE</p>
             </div>
           </div>
 
@@ -88,12 +97,12 @@ const Schedule: React.FC = () => {
 
             <div className="info-card">
               <h3>Parking</h3>
-              <p>Complimentary valet parking is available at the venue</p>
+              <p>Parking is available at nearby public lots and on Main Street</p>
             </div>
 
             <div className="info-card">
               <h3>Accommodations</h3>
-              <p>We've reserved a block of rooms at the nearby Luxury Hotel</p>
+              <p>We've reserved a block of rooms at the nearby Malcolm Hotel</p>
             </div>
           </div>
         </div>
