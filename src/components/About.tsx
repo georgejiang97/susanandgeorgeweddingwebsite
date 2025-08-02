@@ -81,7 +81,7 @@ const About: React.FC = () => {
           <div className="timeline-item">
             <div className="timeline-date">January 13th, 2025</div>
             <div className="timeline-content">
-              <h3>The Proposal</h3>
+              <h3>The Wedding</h3>
               <p>The day we officially became husband and wife!
               </p>
             </div>
@@ -90,7 +90,7 @@ const About: React.FC = () => {
           <div className="timeline-item">
             <div className="timeline-date">{formattedWeddingDate}</div>
             <div className="timeline-content">
-              <h3>Wedding Day</h3>
+              <h3>The Wedding...Again!</h3>
               <p>The day we officially will become husband and wife...again!</p>
             </div>
           </div>
