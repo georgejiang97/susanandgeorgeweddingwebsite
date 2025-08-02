@@ -1,5 +1,5 @@
 import React from 'react';
-import { WEDDING_DATE } from '../constants';
+import { WEDDING_DATE, COUPLE_PHOTO } from '../constants';
 import '../styles/About.css';
 
 const About: React.FC = () => {
@@ -17,8 +17,17 @@ const About: React.FC = () => {
 
         <div className="couple-intro">
           <div className="couple-photo">
-            {/* Placeholder for couple photo */}
-            <div className="photo-placeholder">Photo</div>
+            {/* Use the couple photo from constants */}
+            <img
+              src={COUPLE_PHOTO}
+              alt="George and Susan"
+              onError={(e) => {
+                // If image fails to load, show placeholder
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+            {/* Placeholder as fallback */}
+            <div className="photo-placeholder" style={{ display: 'none' }}>Photo</div>
           </div>
           <div className="couple-text">
             <h2>How We Met</h2>

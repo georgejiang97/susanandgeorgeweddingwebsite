@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { WEDDING_DATE } from '../constants';
+import { WEDDING_DATE, CAROUSEL_IMAGES } from '../constants';
 import '../styles/Home.css';
 
 const Home: React.FC = () => {
@@ -10,6 +10,20 @@ const Home: React.FC = () => {
     minutes: 0,
     seconds: 0
   });
+
+  // Carousel state
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Update carousel image every 5 seconds
+  useEffect(() => {
+    const carouselInterval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === CAROUSEL_IMAGES.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(carouselInterval);
+  }, []);
 
   // Update countdown every second
   useEffect(() => {
@@ -56,11 +70,24 @@ const Home: React.FC = () => {
       rsvpSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
   return (
     <div id="home" className="home">
       <div className="hero">
+        <div className="carousel-container">
+          {CAROUSEL_IMAGES.map((image, index) => (
+            <div
+              key={index}
+              className={`carousel-slide ${index === currentImageIndex ? 'active' : ''}`}
+              style={{
+                backgroundImage: `url(${image})`,
+                opacity: index === currentImageIndex ? 1 : 0
+              }}
+            />
+          ))}
+        </div>
         <div className="hero-content">
-          <h1>George Jiang & Susan Li</h1>
+          <h1>George & Susan</h1>
           <h2>We're Getting Married</h2>
           <p className="wedding-date">{formattedWeddingDate}</p>
           <button className="rsvp-button" onClick={navigateToRSVP}>RSVP</button>

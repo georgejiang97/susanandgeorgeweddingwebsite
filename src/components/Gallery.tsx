@@ -1,19 +1,8 @@
 import React from 'react';
+import { GALLERY_IMAGES } from '../constants';
 import '../styles/Gallery.css';
 
 const Gallery: React.FC = () => {
-  // In a real application, these would be actual image paths
-  const images = [
-    { id: 1, src: '/images/gallery/photo1.jpg', alt: 'Engagement Photo 1' },
-    { id: 2, src: '/images/gallery/photo2.jpg', alt: 'Engagement Photo 2' },
-    { id: 3, src: '/images/gallery/photo3.jpg', alt: 'Engagement Photo 3' },
-    { id: 4, src: '/images/gallery/photo4.jpg', alt: 'Engagement Photo 4' },
-    { id: 5, src: '/images/gallery/photo5.jpg', alt: 'Engagement Photo 5' },
-    { id: 6, src: '/images/gallery/photo6.jpg', alt: 'Engagement Photo 6' },
-    { id: 7, src: '/images/gallery/photo7.jpg', alt: 'Engagement Photo 7' },
-    { id: 8, src: '/images/gallery/photo8.jpg', alt: 'Engagement Photo 8' },
-  ];
-
   return (
     <div id="gallery" className="gallery">
       <div className="container">
@@ -27,7 +16,7 @@ const Gallery: React.FC = () => {
         </div>
 
         <div className="gallery-grid">
-          {images.map((image) => (
+          {GALLERY_IMAGES.map((image) => (
             <div key={image.id} className="gallery-item">
               {/* Using placeholders for demo purposes */}
               <div className="image-placeholder">
