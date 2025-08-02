@@ -63,7 +63,7 @@ const Home: React.FC = () => {
           <h1>John & Sarah</h1>
           <h2>We're Getting Married</h2>
           <p className="wedding-date">{formattedWeddingDate}</p>
-          <button className="rsvp-button">RSVP Now</button>
+          <button className="rsvp-button" onClick={navigateToRSVP}>RSVP</button>
         </div>
       </div>
 
