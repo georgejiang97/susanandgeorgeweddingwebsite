@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { WEDDING_DATE, RSVP_DEADLINE } from '../constants';
+import { WEDDING_DATE, RSVP_DEADLINE, WEB_APP_RSVP_URL } from '../constants';
 import '../styles/RSVP.css';
 
 const RSVP: React.FC = () => {
@@ -38,13 +38,21 @@ const RSVP: React.FC = () => {
     console.log('Form submitted:', formData);
     alert('Thank you for your RSVP! We look forward to celebrating with you.');
     // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      attending: 'yes',
-      dietaryRestrictions: '',
-      message: ''
-    });
+    const data = {
+      name: formData.name,
+      email: formData.email,
+      attending: formData.attending,
+      dietaryRestrictions: formData.dietaryRestrictions,
+      message: formData.message
+    };
+    fetch(WEB_APP_RSVP_URL, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': "text/plain;charset=utf-8"
+      }
+    })
+    .then(res => console.log(res));
   };
 
   return (

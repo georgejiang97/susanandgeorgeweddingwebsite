@@ -29,3 +29,5 @@ export const GALLERY_IMAGES = [
   { id: 7, src: '/images/gallery/photo7.jpg', alt: 'After a really hard hike in the Dolomites. This was definitely type 2.' },
   { id: 8, src: '/images/gallery/photo8.jpg', alt: 'Shanghai, Nov 2024. Susan showing off her new glasses (that she promptly lost)' },
 ];
+
+export const WEB_APP_RSVP_URL = 'https://script.google.com/macros/s/AKfycbwNHVIoGbbZ1cg7oah4-PYrIuNNtxvz15RqfRIUDSBJg4WFVfxVAtMC6DVGZ-bhKfTg/exec';
