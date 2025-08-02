@@ -1,14 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { WEDDING_DATE } from '../constants';
 import '../styles/Home.css';
 
 const Home: React.FC = () => {
+  // Initialize countdown state
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  // Update countdown every second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const timeRemaining = WEDDING_DATE.getTime() - now;
+
+      if (timeRemaining > 0) {
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        setCountdown({ days, hours, minutes, seconds });
+      } else {
+        // Wedding day has arrived!
+        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        clearInterval(interval);
+      }
+    }, 1000);
+
+    // Clean up interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
+  // Format numbers to always have two digits
+  const formatNumber = (num: number): string => {
+    return num < 10 ? `0${num}` : `${num}`;
+  };
+
+  // Format the wedding date for display
+  const formattedWeddingDate = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(WEDDING_DATE);
+
   return (
     <div className="home">
       <div className="hero">
         <div className="hero-content">
           <h1>John & Sarah</h1>
           <h2>We're Getting Married</h2>
-          <p className="wedding-date">June 15, 2024</p>
+          <p className="wedding-date">{formattedWeddingDate}</p>
           <button className="rsvp-button">RSVP Now</button>
         </div>
       </div>
@@ -24,19 +70,19 @@ const Home: React.FC = () => {
             <h3>Countdown to Our Big Day</h3>
             <div className="countdown-timer">
               <div className="countdown-item">
-                <span className="count">00</span>
+                <span className="count">{formatNumber(countdown.days)}</span>
                 <span className="label">Days</span>
               </div>
               <div className="countdown-item">
-                <span className="count">00</span>
+                <span className="count">{formatNumber(countdown.hours)}</span>
                 <span className="label">Hours</span>
               </div>
               <div className="countdown-item">
-                <span className="count">00</span>
+                <span className="count">{formatNumber(countdown.minutes)}</span>
                 <span className="label">Minutes</span>
               </div>
               <div className="countdown-item">
-                <span className="count">00</span>
+                <span className="count">{formatNumber(countdown.seconds)}</span>
                 <span className="label">Seconds</span>
               </div>
             </div>

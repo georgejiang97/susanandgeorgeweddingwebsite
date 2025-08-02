@@ -1,7 +1,21 @@
 import React, { useState } from 'react';
+import { WEDDING_DATE, RSVP_DEADLINE } from '../constants';
 import '../styles/RSVP.css';
 
 const RSVP: React.FC = () => {
+  // Format the wedding date and RSVP deadline for display
+  const formattedWeddingDate = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(WEDDING_DATE);
+
+  const formattedRsvpDeadline = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(RSVP_DEADLINE);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -42,8 +56,8 @@ const RSVP: React.FC = () => {
 
         <div className="rsvp-intro">
           <p>
-            Please let us know if you'll be able to join us on our special day.
-            We kindly request your response by May 15, 2024.
+            Please let us know if you'll be able to join us on our special day ({formattedWeddingDate}).
+            We kindly request your response by {formattedRsvpDeadline}.
           </p>
         </div>
 

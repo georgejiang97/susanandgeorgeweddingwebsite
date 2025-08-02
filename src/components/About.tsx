@@ -1,7 +1,15 @@
 import React from 'react';
+import { WEDDING_DATE } from '../constants';
 import '../styles/About.css';
 
 const About: React.FC = () => {
+  // Format the wedding date for display
+  const formattedWeddingDate = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(WEDDING_DATE);
+
   return (
     <div className="about">
       <div className="container">
@@ -65,7 +73,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="timeline-item">
-            <div className="timeline-date">June 15, 2024</div>
+            <div className="timeline-date">{formattedWeddingDate}</div>
             <div className="timeline-content">
               <h3>Wedding Day</h3>
               <p>The day we officially become husband and wife!</p>
