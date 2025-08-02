@@ -16,7 +16,7 @@ export const CAROUSEL_IMAGES = [
 ];
 
 // About section images
-export const COUPLE_PHOTO = '/images/about/couple.jpg';
+export const COUPLE_PHOTO = '/images/couple_photo_2019.jpeg';
 
 // Gallery images
 export const GALLERY_IMAGES = [

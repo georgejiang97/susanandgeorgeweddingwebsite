@@ -1,6 +1,6 @@
 .about {
   padding: 120px 20px 80px;
-  background-color: #121212;
+  background-color: #DFEBF6;
   position: relative;
 }
 
@@ -11,7 +11,7 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, transparent, #d4af37, transparent);
+  background: linear-gradient(to right, transparent, #768A96, transparent);
 }
 
 .container {
@@ -22,7 +22,7 @@
 .section-title {
   text-align: center;
   font-size: 3rem;
-  color: #f0f0f0;
+  color: #44576D;
   margin-bottom: 60px;
   font-family: 'Playfair Display', serif;
   position: relative;
@@ -36,7 +36,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 2px;
-  background: linear-gradient(to right, #d4af37, #f5cc5d);
+  background: linear-gradient(to right, #768A96, #AAC7D8);
 }
 
 .couple-intro {
@@ -51,24 +51,37 @@
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 30px rgba(41, 53, 60, 0.2);
   transition: transform 0.5s ease;
+  max-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .couple-photo:hover {
   transform: translateY(-10px);
 }
 
+.couple-photo img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
 .photo-placeholder {
-  background-color: #1a1a1a;
+  background-color: #E6E6E6;
   height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: #768A96;
   border-radius: 8px;
   font-size: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(118, 138, 150, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -82,8 +95,8 @@
   height: 200%;
   background: linear-gradient(
     to bottom right,
-    rgba(212, 175, 55, 0.1),
-    rgba(212, 175, 55, 0.05),
+    rgba(170, 199, 216, 0.2),
+    rgba(170, 199, 216, 0.1),
     rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 0)
   );
@@ -105,7 +118,7 @@
 }
 
 .couple-text h2 {
-  color: #d4af37;
+  color: #44576D;
   margin-bottom: 25px;
   font-size: 2rem;
   position: relative;
@@ -119,11 +132,11 @@
   left: 0;
   width: 40px;
   height: 2px;
-  background-color: #d4af37;
+  background-color: #768A96;
 }
 
 .couple-text p {
-  color: #cccccc;
+  color: #29353C;
   line-height: 1.8;
   margin-bottom: 20px;
   font-size: 1.05rem;
@@ -136,7 +149,7 @@
 
 .timeline h2 {
   text-align: center;
-  color: #f0f0f0;
+  color: #44576D;
   margin-bottom: 50px;
   font-size: 2rem;
   position: relative;
@@ -151,7 +164,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: #d4af37;
+  background-color: #768A96;
 }
 
 .timeline-item {
@@ -167,7 +180,7 @@
   top: 0;
   bottom: -40px;
   width: 1px;
-  background: linear-gradient(to bottom, #d4af37, rgba(212, 175, 55, 0.3));
+  background: linear-gradient(to bottom, #768A96, rgba(118, 138, 150, 0.3));
 }
 
 .timeline-item:last-child::before {
@@ -178,7 +191,7 @@
   width: 120px;
   padding-right: 30px;
   font-weight: 500;
-  color: #d4af37;
+  color: #44576D;
   text-align: right;
   font-size: 0.95rem;
   letter-spacing: 1px;
@@ -187,18 +200,18 @@
 
 .timeline-content {
   flex: 1;
-  background-color: #1a1a1a;
+  background-color: #E6E6E6;
   padding: 25px;
   border-radius: 8px;
   position: relative;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 20px rgba(41, 53, 60, 0.1);
+  border: 1px solid rgba(118, 138, 150, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-content:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 30px rgba(41, 53, 60, 0.2);
 }
 
 .timeline-content::before {
@@ -208,20 +221,20 @@
   top: 20px;
   width: 20px;
   height: 20px;
-  background: linear-gradient(135deg, #d4af37, #f5cc5d);
+  background: linear-gradient(135deg, #768A96, #AAC7D8);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 10px rgba(170, 199, 216, 0.5);
 }
 
 .timeline-content h3 {
   margin-top: 0;
-  color: #f0f0f0;
+  color: #44576D;
   margin-bottom: 15px;
   font-size: 1.3rem;
 }
 
 .timeline-content p {
-  color: #cccccc;
+  color: #29353C;
   margin-bottom: 0;
   line-height: 1.6;
 }
