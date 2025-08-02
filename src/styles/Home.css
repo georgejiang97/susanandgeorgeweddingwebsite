@@ -109,12 +109,11 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
 }
 
 .rsvp-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   background: linear-gradient(135deg, #f5cc5d 0%, #d4af37 100%);
 }
 
