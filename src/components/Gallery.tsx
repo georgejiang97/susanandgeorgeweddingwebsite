@@ -15,7 +15,7 @@ const Gallery: React.FC = () => {
   ];
 
   return (
-    <div className="gallery">
+    <div id="gallery" className="gallery">
       <div className="container">
         <h1 className="section-title">Our Gallery</h1>
 

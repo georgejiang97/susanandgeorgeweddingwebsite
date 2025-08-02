@@ -11,7 +11,7 @@ const About: React.FC = () => {
   }).format(WEDDING_DATE);
 
   return (
-    <div className="about">
+    <div id="about" className="about">
       <div className="container">
         <h1 className="section-title">Our Story</h1>
 

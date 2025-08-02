@@ -3,7 +3,7 @@ import '../styles/Schedule.css';
 
 const Schedule: React.FC = () => {
   return (
-    <div className="schedule">
+    <div id="schedule" className="schedule">
       <div className="container">
         <h1 className="section-title">Wedding Day Schedule</h1>
 
