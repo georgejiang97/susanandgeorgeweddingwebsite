@@ -46,31 +46,44 @@ const About: React.FC = () => {
             <div className="timeline-date">Summer 2018</div>
             <div className="timeline-content">
               <h3>First Meeting</h3>
-              <p>We met at a friend's birthday party and instantly connected.</p>
+              <p>We met during an intern event, and became friends through DDR and trauma from working at Meta.</p>
             </div>
           </div>
 
           <div className="timeline-item">
             <div className="timeline-date">Fall 2018</div>
             <div className="timeline-content">
-              <h3>First Date</h3>
-              <p>Our first official date at Luigi's Italian Restaurant.</p>
+              <h3>COVID</h3>
+              <p>COVID era and going back to our regular school schedule meant we couldn't hang out much :(</p>
             </div>
           </div>
 
           <div className="timeline-item">
-            <div className="timeline-date">Spring 2019</div>
+            <div className="timeline-date">Summer 2021</div>
             <div className="timeline-content">
-              <h3>Moving In Together</h3>
-              <p>We took the big step of moving in together and adopted our cat, Whiskers.</p>
+              <h3>Susan ✈️ Seattle</h3>
+              <p>Susan and Taro took the big step of moving to Seattle, where George asked both of them on a date.
+                We became official on June 2nd, 2021!
+              </p>
             </div>
           </div>
 
           <div className="timeline-item">
-            <div className="timeline-date">Summer 2022</div>
+            <div className="timeline-date">Fall 2024</div>
             <div className="timeline-content">
               <h3>The Proposal</h3>
-              <p>George proposed during our hiking trip to the mountains at sunset.</p>
+              <p>During our trip to China, George proposed in his hometown Qingdao! When he pulled out the ring, Susan said
+                "What is this." and said yes!!!
+              </p>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-date">January 13th, 2025</div>
+            <div className="timeline-content">
+              <h3>The Proposal</h3>
+              <p>The day we officially became husband and wife!
+              </p>
             </div>
           </div>
 
@@ -78,7 +91,7 @@ const About: React.FC = () => {
             <div className="timeline-date">{formattedWeddingDate}</div>
             <div className="timeline-content">
               <h3>Wedding Day</h3>
-              <p>The day we officially become husband and wife!</p>
+              <p>The day we officially will become husband and wife...again!</p>
             </div>
           </div>
         </div>
