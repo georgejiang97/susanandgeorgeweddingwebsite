@@ -23,16 +23,9 @@ const About: React.FC = () => {
           <div className="couple-text">
             <h2>How We Met</h2>
             <p>
-              We first met at a mutual friend's birthday party in the summer of 2018.
-              George was trying to make everyone laugh with his terrible dance moves,
-              and Susan couldn't help but join in. We spent the whole night talking
-              and realized we had so much in common - from our love of hiking to our
-              shared obsession with true crime podcasts.
-            </p>
-            <p>
-              After that night, we started spending more time together, and the rest,
-              as they say, is history. Our first official date was at a small Italian
-              restaurant downtown, where we talked for hours and closed the place down.
+              We first met during internship at a group intern event back in 2018. Susan was acting all
+              edgy, with a bright yellow leather biking jacket, walking in front of everyone else, while
+              George was playing hard to get. Naturally we ended up together.
             </p>
           </div>
         </div>
