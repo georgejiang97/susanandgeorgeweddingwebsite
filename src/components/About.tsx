@@ -24,8 +24,8 @@ const About: React.FC = () => {
             <h2>How We Met</h2>
             <p>
               We first met at a mutual friend's birthday party in the summer of 2018.
-              John was trying to make everyone laugh with his terrible dance moves,
-              and Sarah couldn't help but join in. We spent the whole night talking
+              George was trying to make everyone laugh with his terrible dance moves,
+              and Susan couldn't help but join in. We spent the whole night talking
               and realized we had so much in common - from our love of hiking to our
               shared obsession with true crime podcasts.
             </p>
@@ -68,7 +68,7 @@ const About: React.FC = () => {
             <div className="timeline-date">Summer 2022</div>
             <div className="timeline-content">
               <h3>The Proposal</h3>
-              <p>John proposed during our hiking trip to the mountains at sunset.</p>
+              <p>George proposed during our hiking trip to the mountains at sunset.</p>
             </div>
           </div>
 

@@ -43,7 +43,7 @@ const Gallery: React.FC = () => {
           <h3>Share Your Photos</h3>
           <p>
             We'd love to see your photos from our special day! Please use our wedding hashtag
-            <span className="hashtag"> #JohnAndSarah2024</span> when posting on social media.
+            <span className="hashtag"> #GeorgeAndSusan2026</span> when posting on social media.
           </p>
         </div>
       </div>
