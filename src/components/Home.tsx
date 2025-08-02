@@ -57,7 +57,7 @@ const Home: React.FC = () => {
     }
   }
   return (
-    <div className="home">
+    <div id="home" className="home">
       <div className="hero">
         <div className="hero-content">
           <h1>George Jiang & Susan Li</h1>
