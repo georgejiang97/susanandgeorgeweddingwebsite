@@ -31,58 +31,28 @@ const Schedule: React.FC = () => {
 
         <div className="schedule-timeline">
           <div className="schedule-item">
-            <div className="schedule-time">3:00 PM</div>
+            <div className="schedule-time">2:30 PM</div>
             <div className="schedule-content">
               <h3>Guest Arrival</h3>
-              <p>Please arrive at MAINSPACE and be seated</p>
+              <p>Please arrive at Mainspace, if you require a shuttle to get to the ceremony site.
+                The ceremony will take place at Banff Gate Mountain (https://maps.app.goo.gl/wotoQSr3x6Xiwizu6)
+              </p>
             </div>
           </div>
 
           <div className="schedule-item">
-            <div className="schedule-time">3:30 PM</div>
+            <div className="schedule-time">3:00 PM</div>
             <div className="schedule-content">
               <h3>Ceremony Begins</h3>
-              <p>The wedding ceremony will take place in the main hall</p>
+              <p>Please arrive at Banff Gate Mountain by 3:00 PM and be seated for the ceremony.</p>
             </div>
           </div>
 
           <div className="schedule-item">
-            <div className="schedule-time">4:30 PM</div>
-            <div className="schedule-content">
-              <h3>Cocktail Hour</h3>
-              <p>Enjoy drinks and appetizers while we take photos</p>
-            </div>
-          </div>
-
-          <div className="schedule-item">
-            <div className="schedule-time">5:30 PM</div>
+            <div className="schedule-time">5:00 PM to 10:00 PM</div>
             <div className="schedule-content">
               <h3>Reception</h3>
-              <p>Dinner, speeches, and celebration at MAINSPACE</p>
-            </div>
-          </div>
-
-          <div className="schedule-item">
-            <div className="schedule-time">7:00 PM</div>
-            <div className="schedule-content">
-              <h3>First Dance</h3>
-              <p>The newlyweds will share their first dance as a married couple</p>
-            </div>
-          </div>
-
-          <div className="schedule-item">
-            <div className="schedule-time">7:30 PM</div>
-            <div className="schedule-content">
-              <h3>Cake Cutting</h3>
-              <p>The couple will cut the wedding cake</p>
-            </div>
-          </div>
-
-          <div className="schedule-item">
-            <div className="schedule-time">8:00 PM - 12:00 AM</div>
-            <div className="schedule-content">
-              <h3>Dancing & Celebration</h3>
-              <p>Dance the night away with us!</p>
+              <p>Dinner, speeches, and celebration at Mainspace!</p>
             </div>
           </div>
         </div>
