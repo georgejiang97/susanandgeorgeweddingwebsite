@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 import { WEDDING_DATE, RSVP_DEADLINE, WEB_APP_RSVP_URL } from '../constants';
 import '../styles/RSVP.css';
 
+const initialFormData = {
+  name: '',
+  email: '',
+  attending: "no",
+  dietaryRestrictions: '',
+  message: ''
+}
+
 const RSVP: React.FC = () => {
   // Format the wedding date and RSVP deadline for display
   const formattedWeddingDate = new Intl.DateTimeFormat('en-US', {
@@ -16,13 +24,7 @@ const RSVP: React.FC = () => {
     day: 'numeric'
   }).format(RSVP_DEADLINE);
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    attending: 'yes',
-    dietaryRestrictions: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -53,6 +55,7 @@ const RSVP: React.FC = () => {
       }
     })
     .then(res => console.log(res));
+    setFormData(initialFormData);
   };
 
   return (
@@ -103,7 +106,7 @@ const RSVP: React.FC = () => {
                     type="radio"
                     name="attending"
                     value="yes"
-                    checked={formData.attending === 'yes'}
+                    checked={formData.attending === "yes"}
                     onChange={handleChange}
                   />
                   Yes, I'll be there
@@ -113,7 +116,7 @@ const RSVP: React.FC = () => {
                     type="radio"
                     name="attending"
                     value="no"
-                    checked={formData.attending === 'no'}
+                    checked={formData.attending === "no"}
                     onChange={handleChange}
                   />
                   Sorry, I can't make it
@@ -121,7 +124,7 @@ const RSVP: React.FC = () => {
               </div>
             </div>
 
-            {formData.attending === 'yes' && (
+            {formData.attending === "yes" && (
               <>
                 <div className="form-group">
                   <label htmlFor="dietaryRestrictions">Dietary Restrictions</label>
