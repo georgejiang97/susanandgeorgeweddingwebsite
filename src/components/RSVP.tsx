@@ -5,7 +5,8 @@ import '../styles/RSVP.css';
 const initialFormData = {
   name: '',
   email: '',
-  attending: "no",
+  phone: '',
+  attending: "yes",
   dietaryRestrictions: '',
   message: ''
 }
@@ -99,6 +100,19 @@ const RSVP: React.FC = () => {
             </div>
 
             <div className="form-group">
+              <label htmlFor="phone">Phone Number</label>
+              <input
+                type="number"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                placeholder="Enter your phone number"
+              />
+            </div>
+
+            <div className="form-group">
               <label>Will you be attending?</label>
               <div className="radio-group">
                 <label className="radio-label">
@@ -109,7 +123,7 @@ const RSVP: React.FC = () => {
                     checked={formData.attending === "yes"}
                     onChange={handleChange}
                   />
-                  Yes, I'll be there
+                  Yes, I'll be there!
                 </label>
                 <label className="radio-label">
                   <input
