@@ -67,12 +67,12 @@ const Schedule: React.FC = () => {
 
             <div className="info-card">
               <h3>Parking</h3>
-              <p>Parking is available at nearby public lots and on Main Street</p>
+              <p>Street parking is usually pretty easy in Canmore. We'll also have shuttles going around Canmore after, and to and from the ceremony!</p>
             </div>
 
             <div className="info-card">
               <h3>Accommodations</h3>
-              <p>We've reserved a block of rooms at the nearby Malcolm Hotel</p>
+              <p>We suggest to stay in Banff or Canmore, and getting a rental car to explore. We'll provide shuttles between Canmore, and also Banff for after the wedding.</p>
             </div>
           </div>
         </div>
