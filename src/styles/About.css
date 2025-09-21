@@ -1,6 +1,6 @@
 .about {
   padding: 120px 20px 80px;
-  background-color: #E6E6E6;
+  background-color: #1a1a1a;
   position: relative;
 }
 
@@ -11,7 +11,7 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, transparent, #768A96, transparent);
+  background: linear-gradient(to right, transparent, #d4af37, transparent);
 }
 
 .container {
@@ -19,10 +19,10 @@
   margin: 0 auto;
 }
 
-.section-title {
+.about .section-title {
   text-align: center;
   font-size: 3rem;
-  color: #1a1a1a;
+  color: #f0f0f0 !important;
   margin-bottom: 60px;
   font-family: 'Playfair Display', serif;
   position: relative;
@@ -38,7 +38,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 2px;
-  background: linear-gradient(to right, #768A96, #AAC7D8);
+  background: linear-gradient(to right, #d4af37, #f5cc5d);
 }
 
 .couple-intro {
@@ -53,7 +53,7 @@
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 15px 30px rgba(41, 53, 60, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   transition: transform 0.5s ease;
   max-height: 350px;
   display: flex;
@@ -75,15 +75,15 @@
 }
 
 .photo-placeholder {
-  background-color: #E6E6E6;
+  background-color: #252525;
   height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #768A96;
+  color: #666;
   border-radius: 8px;
   font-size: 1.5rem;
-  border: 1px solid rgba(118, 138, 150, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -97,8 +97,8 @@
   height: 200%;
   background: linear-gradient(
     to bottom right,
-    rgba(170, 199, 216, 0.2),
-    rgba(170, 199, 216, 0.1),
+    rgba(212, 175, 55, 0.1),
+    rgba(212, 175, 55, 0.05),
     rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 0)
   );
@@ -120,7 +120,7 @@
 }
 
 .couple-text h2 {
-  color: #44576D;
+  color: #d4af37;
   margin-bottom: 25px;
   font-size: 2rem;
   position: relative;
@@ -134,11 +134,11 @@
   left: 0;
   width: 40px;
   height: 2px;
-  background-color: #768A96;
+  background-color: #d4af37;
 }
 
 .couple-text p {
-  color: #29353C;
+  color: #cccccc;
   line-height: 1.8;
   margin-bottom: 20px;
   font-size: 1.05rem;
@@ -151,7 +151,7 @@
 
 .timeline h2 {
   text-align: center;
-  color: #44576D;
+  color: #f0f0f0;
   margin-bottom: 50px;
   font-size: 2rem;
   position: relative;
@@ -166,7 +166,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: #768A96;
+  background-color: #d4af37;
 }
 
 .timeline-item {
@@ -182,7 +182,7 @@
   top: 0;
   bottom: -40px;
   width: 1px;
-  background-color: #768A96;
+  background-color: #d4af37;
 }
 
 .timeline-item:last-child::before {
@@ -193,7 +193,7 @@
   width: 140px;
   padding-right: 30px;
   font-weight: 500;
-  color: #44576D;
+  color: #d4af37;
   text-align: right;
   font-size: 0.95rem;
   letter-spacing: 1px;
@@ -202,30 +202,29 @@
 
 .timeline-content {
   flex: 1;
-  background-color: #E6E6E6;
+  background-color: #252525;
   padding: 25px;
   border-radius: 8px;
   position: relative;
-  box-shadow: 0 10px 20px rgba(41, 53, 60, 0.1);
-  border: 1px solid rgba(118, 138, 150, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-left: 10px;
 }
 
 .timeline-content:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(41, 53, 60, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
-
 .timeline-content h3 {
   margin-top: 0;
-  color: #44576D;
+  color: #f0f0f0;
   margin-bottom: 15px;
   font-size: 1.3rem;
 }
 
 .timeline-content p {
-  color: #29353C;
+  color: #cccccc;
   margin-bottom: 0;
   line-height: 1.6;
 }
