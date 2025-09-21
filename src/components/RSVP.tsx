@@ -22,6 +22,14 @@ const initialFormData: FormData = {
   message: ''
 }
 
+const additionalEventsOptions: string[] = [
+  "Wednesday, Jun 17 2026",
+  "Thursday, Jun 18 2026",
+  "Friday, Jun 19 2026",
+  "Saturday, Jun 20 2026",
+  "Sunday, Jun 21 2026",
+]
+
 const RSVP: React.FC = () => {
   // Format the wedding date and RSVP deadline for display
   const formattedWeddingDate = new Intl.DateTimeFormat('en-US', {
@@ -69,14 +77,15 @@ const RSVP: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+    
+    const additionalEvents = additionalEventsOptions.filter(date => formData.additionalEvents.has(date))
     try {
       const data = {
         name: formData.name,
         email: formData.email,
         attending: formData.attending === "yes" ? "attending" : "not attending",
         dietaryRestrictions: formData.dietaryRestrictions,
-        additionalEvents: formData.additionalEvents.size === 0 ? 'N/A' : Array.from(formData.additionalEvents).join(", "),
+        additionalEvents: additionalEvents.join(", "),
         message: formData.message,
         phone: formData.phone
       };
@@ -99,10 +108,6 @@ const RSVP: React.FC = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
   };
 
   return (
@@ -202,81 +207,26 @@ const RSVP: React.FC = () => {
                   <p>Susan & George are eager to plan some pre and post wedding events for guests to enjoy the beauty of Banff National Park! If you're interested in attending, please select which dates you think you'd be able to attend.</p>
                   <p>We will reach out in the upcoming months for additional details and RSVPs to these events.</p>
                   <div className="additional-events-cards">
-                    <div className="event-card">
-                      <input
-                        type="checkbox"
-                        id="event-W"
-                        name="additionalEvents"
-                        value="Wednesday, June 17, 2026"
-                        checked={formData.additionalEvents.has("Wednesday, June 17, 2026")}
-                        onChange={handleMultiSelectChange}
-                      />
-                      <label htmlFor="event-W" className="event-card-label">
-                        <div className="event-day">Wednesday</div>
-                        <div className="event-date">Jun 17, 2026</div>
-                      </label>
-                    </div>
-
-                    <div className="event-card">
-                      <input
-                        type="checkbox"
-                        id="event-Th"
-                        name="additionalEvents"
-                        value="Thursday, June 18, 2026"
-                        checked={formData.additionalEvents.has("Thursday, June 18, 2026")}
-                        onChange={handleMultiSelectChange}
-                      />
-                      <label htmlFor="event-Th" className="event-card-label">
-                        <div className="event-day">Thursday</div>
-                        <div className="event-date">Jun 18, 2026</div>
-                      </label>
-                    </div>
-
-                    <div className="event-card">
-                      <input
-                        type="checkbox"
-                        id="event-F"
-                        name="additionalEvents"
-                        value="Friday, June 19, 2026"
-                        checked={formData.additionalEvents.has("Friday, June 19, 2026")}
-                        onChange={handleMultiSelectChange}
-                      />
-                      <label htmlFor="event-F" className="event-card-label">
-                        <div className="event-day">Friday</div>
-                        <div className="event-date">Jun 19, 2026</div>
-                      </label>
-                    </div>
-
-                    <div className="event-card wedding-day">
-                      <input
-                        type="checkbox"
-                        id="event-Sa"
-                        name="additionalEvents"
-                        value="Sa"
-                        disabled
-                        checked={false}
-                      />
-                      <label htmlFor="event-Sa" className="event-card-label disabled">
-                        <div className="event-day">Saturday</div>
-                        <div className="event-date">Jun 20, 2026</div>
-                        <div className="wedding-indicator">Wedding Day</div>
-                      </label>
-                    </div>
-
-                    <div className="event-card">
-                      <input
-                        type="checkbox"
-                        id="event-S"
-                        name="additionalEvents"
-                        value="Sunday, June 21, 2026"
-                        checked={formData.additionalEvents.has("Sunday, June 21, 2026")}
-                        onChange={handleMultiSelectChange}
-                      />
-                      <label htmlFor="event-S" className="event-card-label">
-                        <div className="event-day">Sunday</div>
-                        <div className="event-date">Jun 21, 2026</div>
-                      </label>
-                    </div>
+                    {additionalEventsOptions.map(eventDate => {
+                      const [day, date] = eventDate.split(", ")
+                      const isWeddingDate = day === "Saturday" && date === "Jun 20 2026"
+                      return <div className={`event-card${isWeddingDate ? " wedding-day" : ""}`}>
+                        <input
+                          type="checkbox"
+                          id={"event-" + eventDate}
+                          name="additionalEvents"
+                          value={eventDate}
+                          disabled={isWeddingDate}
+                          checked={formData.additionalEvents.has(eventDate)}
+                          onChange={handleMultiSelectChange}
+                        />
+                        <label htmlFor={`event-${eventDate}`} className={`event-card-label${isWeddingDate ? " disabled" : ""}`}>
+                          <div className="event-day">{day}</div>
+                          <div className="event-date">{date}</div>
+                          {isWeddingDate && <div className="wedding-indicator">Wedding Day</div>}
+                        </label>
+                      </div>
+                    })}
                   </div>
                 </div>
               </>
@@ -312,7 +262,7 @@ const RSVP: React.FC = () => {
 
       {/* RSVP Success Modal */}
       {showModal && (
-        <div className="modal-overlay" onClick={closeModal}>
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h2>Thank You!</h2>
@@ -333,7 +283,7 @@ const RSVP: React.FC = () => {
               </p>
             </div>
             <div className="modal-footer">
-              <button className="modal-button" onClick={closeModal}>
+              <button className="modal-button" onClick={() => setShowModal(false)}>
                 Perfect!
               </button>
             </div>
