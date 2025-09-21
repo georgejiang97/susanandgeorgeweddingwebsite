@@ -35,7 +35,7 @@ const Schedule: React.FC = () => {
             <div className="schedule-content">
               <h3>Guest Arrival</h3>
               <p>Please arrive at Mainspace, if you require a shuttle to get to the ceremony site.
-                The ceremony will take place at Quarry Lake Park (https://maps.app.goo.gl/QY8Bs9CZVoAtNuJ36). If you're driving to the park instead, please not
+                The ceremony will take place at Quarry Lake Park (https://maps.app.goo.gl/QY8Bs9CZVoAtNuJ36). If you're driving to the park instead, please note
                 that parking is limited and expensive.
               </p>
             </div>
@@ -69,6 +69,7 @@ const Schedule: React.FC = () => {
             <div className="info-card">
               <h3>Parking</h3>
               <p>Street parking is usually pretty easy in Canmore. We'll also have shuttles going around Canmore after, and to and from the ceremony!</p>
+              <p>For the ceremony, there is limited parking at the park. Please note that parking is expensive (~$30) and limited.</p>
             </div>
 
             <div className="info-card">
