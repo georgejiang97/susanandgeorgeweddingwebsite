@@ -1,9 +1,20 @@
 import React from 'react';
+import { QUARRY_LAKE_IMAGE } from '../constants';
 import '../styles/Schedule.css';
 
 const Schedule: React.FC = () => {
   return (
-    <div id="schedule" className="schedule">
+    <div
+      id="schedule"
+      className="schedule"
+      style={{
+        backgroundImage: `url(${QUARRY_LAKE_IMAGE})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <div className="container">
         <h1 className="section-title">Wedding Day Schedule</h1>
 

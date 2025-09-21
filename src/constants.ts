@@ -18,6 +18,9 @@ export const CAROUSEL_IMAGES = [
 // About section images
 export const COUPLE_PHOTO = `${process.env.PUBLIC_URL}/images/couple_photo_2019.jpeg`;
 
+// Schedule section images
+export const QUARRY_LAKE_IMAGE = `${process.env.PUBLIC_URL}/images/quarry_lake.jpg`;
+
 // Gallery images
 export const GALLERY_IMAGES = [
   { id: 1, src: `${process.env.PUBLIC_URL}/images/gallery/photo1.jpg`, alt: 'From our engagement photoshoot in 2021!' },
