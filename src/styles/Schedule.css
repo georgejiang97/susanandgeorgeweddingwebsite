@@ -172,7 +172,7 @@
 
 .schedule-time {
   width: 140px;
-  padding-right: 30px;
+  padding-right: 15px;
   font-weight: 500;
   color: #d4af37;
   text-align: right;
@@ -189,7 +189,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .schedule-content:hover {
@@ -290,11 +290,12 @@
 
   .schedule-time {
     width: 100px;
+    padding-right: 10px;
     font-size: 0.85rem;
   }
 
   .schedule-content {
-    margin-left: 5px;
+    margin-left: 10px;
   }
 
   .schedule-content::before {
