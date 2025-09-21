@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/susanandgeorgeweddingwebsite/static/css/main.4bb62bc0.css",
-    "main.js": "/susanandgeorgeweddingwebsite/static/js/main.5ad85122.js",
+    "main.css": "/susanandgeorgeweddingwebsite/static/css/main.dbab1d03.css",
+    "main.js": "/susanandgeorgeweddingwebsite/static/js/main.a4b287cf.js",
     "static/js/453.7c9966f9.chunk.js": "/susanandgeorgeweddingwebsite/static/js/453.7c9966f9.chunk.js",
     "index.html": "/susanandgeorgeweddingwebsite/index.html",
-    "main.4bb62bc0.css.map": "/susanandgeorgeweddingwebsite/static/css/main.4bb62bc0.css.map",
-    "main.5ad85122.js.map": "/susanandgeorgeweddingwebsite/static/js/main.5ad85122.js.map",
+    "main.dbab1d03.css.map": "/susanandgeorgeweddingwebsite/static/css/main.dbab1d03.css.map",
+    "main.a4b287cf.js.map": "/susanandgeorgeweddingwebsite/static/js/main.a4b287cf.js.map",
     "453.7c9966f9.chunk.js.map": "/susanandgeorgeweddingwebsite/static/js/453.7c9966f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4bb62bc0.css",
-    "static/js/main.5ad85122.js"
+    "static/css/main.dbab1d03.css",
+    "static/js/main.a4b287cf.js"
   ]
 }
