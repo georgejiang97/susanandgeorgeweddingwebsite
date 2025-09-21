@@ -110,34 +110,6 @@ const RSVP: React.FC = () => {
     }
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-    // In a real application, you would send this data to a server
-    console.log('Form submitted:', formData);
-    // Reset form
-
-    // don't use the date set, re-make the events from the array to maintain order
-    const additionalEvents = additionalEventsOptions.filter(date => formData.additionalEvents.has(date))
-
-    const data = {
-      name: formData.name,
-      email: formData.email,
-      attending: formData.attending === "yes" ? "attending" : "not attending",
-      dietaryRestrictions: formData.dietaryRestrictions,
-      additionalEvents: additionalEvents.join(", "),
-      message: formData.message
-    };
-    fetch(WEB_APP_RSVP_URL, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': "text/plain;charset=utf-8"
-      }
-    })
-    .then(res => console.log(res));
-    setFormData(initialFormData);
-  };
-
   return (
     <div id="rsvp" className="rsvp">
       <div className="container">
@@ -290,7 +262,7 @@ const RSVP: React.FC = () => {
 
       {/* RSVP Success Modal */}
       {showModal && (
-        <div className="modal-overlay" onClick={closeModal}>
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h2>Thank You!</h2>
@@ -311,7 +283,7 @@ const RSVP: React.FC = () => {
               </p>
             </div>
             <div className="modal-footer">
-              <button className="modal-button" onClick={closeModal}>
+              <button className="modal-button" onClick={() => setShowModal(false)}>
                 Perfect!
               </button>
             </div>
