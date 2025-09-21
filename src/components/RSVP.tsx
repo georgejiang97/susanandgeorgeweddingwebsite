@@ -39,7 +39,7 @@ const RSVP: React.FC = () => {
     e.preventDefault();
     // In a real application, you would send this data to a server
     console.log('Form submitted:', formData);
-    alert('Thank you for your RSVP! We look forward to celebrating with you.');
+    alert('Thank you for your RSVP! Please check your inbox for your confirmation email. We look forward to celebrating with you.');
     // Reset form
     const data = {
       name: formData.name,

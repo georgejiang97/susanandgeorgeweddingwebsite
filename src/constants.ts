@@ -30,4 +30,4 @@ export const GALLERY_IMAGES = [
   { id: 8, src: 'images/gallery/photo8.jpg', alt: 'Shanghai, Nov 2024. Susan showing off her new glasses (that she promptly lost)' },
 ];
 
-export const WEB_APP_RSVP_URL = 'https://script.google.com/macros/s/AKfycbzsTyQ30xdsbyycWSGzemyVnZt-U3AXhxys6Vc3CijZeKOtWSJLBuSNk5TBPiqzEqi2/exec';
+export const WEB_APP_RSVP_URL = 'https://script.google.com/macros/s/AKfycbxjZ5IYj8GCeXILGmGtw6CPx9IM_1Hl4aPeGacgkuKPj-RZeWayjNcbc91KHoA-Z7r0/exec';
