@@ -118,7 +118,7 @@ const RSVP: React.FC = () => {
         <div className="rsvp-intro">
           <p>
             Please let us know if you'll be able to join us on our special day ({formattedWeddingDate}).
-            We kindly request your response by {formattedRsvpDeadline}.
+            We kindly request your response ASAP or by {formattedRsvpDeadline}.
           </p>
         </div>
 
