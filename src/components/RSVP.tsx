@@ -37,6 +37,8 @@ const RSVP: React.FC = () => {
   }).format(RSVP_DEADLINE);
 
   const [formData, setFormData] = useState(initialFormData) as any[];
+  const [showModal, setShowModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -64,29 +66,43 @@ const RSVP: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send this data to a server
-    console.log('Form submitted:', formData);
-    alert('Thank you for your RSVP! We look forward to celebrating with you.');
-    // Reset form
-    const data = {
-      name: formData.name,
-      email: formData.email,
-      attending: formData.attending === "yes" ? "attending" : "not attending",
-      dietaryRestrictions: formData.dietaryRestrictions,
-      additionalEvents: formData.additionalEvents.length === 0 ? Array.from(formData.additionalEvents).join(", ") : 'N/A',
-      message: formData.message
-    };
-    fetch(WEB_APP_RSVP_URL, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': "text/plain;charset=utf-8"
-      }
-    })
-    .then(res => console.log(res));
-    setFormData(initialFormData);
+    setIsSubmitting(true);
+
+    try {
+      const data = {
+        name: formData.name,
+        email: formData.email,
+        attending: formData.attending === "yes" ? "attending" : "not attending",
+        dietaryRestrictions: formData.dietaryRestrictions,
+        additionalEvents: formData.additionalEvents.size === 0 ? 'N/A' : Array.from(formData.additionalEvents).join(", "),
+        message: formData.message,
+        phone: formData.phone
+      };
+
+      await fetch(WEB_APP_RSVP_URL, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': "text/plain;charset=utf-8"
+        }
+      });
+
+      console.log('Form submitted:', formData);
+      setShowModal(true);
+      setFormData(initialFormData);
+    } catch (error) {
+      console.error('Error submitting RSVP:', error);
+      // You could show an error modal here instead
+      alert('There was an error submitting your RSVP. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -278,8 +294,8 @@ const RSVP: React.FC = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className="submit-button">
-              Submit RSVP
+            <button type="submit" className="submit-button" disabled={isSubmitting}>
+              {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
             </button>
           </form>
         </div>
@@ -293,6 +309,37 @@ const RSVP: React.FC = () => {
           </p>
         </div>
       </div>
+
+      {/* RSVP Success Modal */}
+      {showModal && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Thank You!</h2>
+            </div>
+            <div className="modal-body">
+              <div className="modal-icon">
+                🎉
+              </div>
+              <p>
+                Thank you for your RSVP! We're so excited to celebrate with you on our special day.
+              </p>
+              <p>
+                You should receive a confirmation email shortly. If you need to make any changes,
+                please contact us at{' '}
+                <a href="mailto:susanandgeorgewedding2026@gmail.com">
+                  susanandgeorgewedding2026@gmail.com
+                </a>
+              </p>
+            </div>
+            <div className="modal-footer">
+              <button className="modal-button" onClick={closeModal}>
+                Perfect!
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
