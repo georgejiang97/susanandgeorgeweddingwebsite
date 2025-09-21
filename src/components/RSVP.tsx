@@ -77,14 +77,15 @@ const RSVP: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+    
+    const additionalEvents = additionalEventsOptions.filter(date => formData.additionalEvents.has(date))
     try {
       const data = {
         name: formData.name,
         email: formData.email,
         attending: formData.attending === "yes" ? "attending" : "not attending",
         dietaryRestrictions: formData.dietaryRestrictions,
-        additionalEvents: formData.additionalEvents.size === 0 ? 'N/A' : Array.from(formData.additionalEvents).join(", "),
+        additionalEvents: additionalEvents.join(", "),
         message: formData.message,
         phone: formData.phone
       };
