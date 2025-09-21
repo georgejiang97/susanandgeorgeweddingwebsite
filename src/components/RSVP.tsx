@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 import { WEDDING_DATE, RSVP_DEADLINE, WEB_APP_RSVP_URL } from '../constants';
 import '../styles/RSVP.css';
 
-const initialFormData = {
+type FormData = {
+  name: string
+  email: string
+  phone: string
+  attending: string
+  dietaryRestrictions: string
+  additionalEvents: Set<string>
+  message: string
+}
+
+const initialFormData: FormData = {
   name: '',
   email: '',
   phone: '',
   attending: "yes",
   dietaryRestrictions: '',
+  additionalEvents: new Set(),
   message: ''
 }
 
@@ -25,7 +36,8 @@ const RSVP: React.FC = () => {
     day: 'numeric'
   }).format(RSVP_DEADLINE);
 
-  const [formData, setFormData] = useState(initialFormData);
+  const [formData, setFormData] = useState(initialFormData) as any[];
+  console.log(formData)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -35,17 +47,36 @@ const RSVP: React.FC = () => {
     });
   };
 
+  const handleMultiSelectChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+
+    let currValue: Set<string> = new Set(formData[name]);
+    console.log(currValue)
+
+    if (currValue.has(value)) {
+      currValue.delete(value)
+    } else {
+      currValue.add(value)
+    }
+
+    setFormData({
+      ...formData,
+      [name]: currValue
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real application, you would send this data to a server
     console.log('Form submitted:', formData);
-    alert('Thank you for your RSVP! Please check your inbox for your confirmation email. We look forward to celebrating with you.');
+    alert('Thank you for your RSVP! We look forward to celebrating with you.');
     // Reset form
     const data = {
       name: formData.name,
       email: formData.email,
       attending: formData.attending,
       dietaryRestrictions: formData.dietaryRestrictions,
+      additionalEvents: Array.from(formData.additionalEvents).join(","),
       message: formData.message
     };
     fetch(WEB_APP_RSVP_URL, {
@@ -150,6 +181,26 @@ const RSVP: React.FC = () => {
                     onChange={handleChange}
                     placeholder="Please list any dietary restrictions"
                   />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="additionalEvents">Additional Events</label>
+                  <p>Susan & George are eager to plan some pre and post wedding events for guests to enjoy the beauty of Banff National Park! If you're interested in attending, please select which dates you think you'd be able to attend.</p>
+                  <p>We will reach out in the upcoming months for additional details and RSVPs to these events.</p>
+                  <div className="additional-events-wrapper">
+                    <select
+                      id="additionalEvents"
+                      name="additionalEvents"
+                      multiple={true}
+                      value={formData.additionalEvents}
+                      onChange={handleMultiSelectChange}
+                      >
+                      <option value="W"><p>Wednesday</p><p>Jun 17, 2026</p></option>
+                      <option value="Th">Thursday, Jun 18</option>
+                      <option value="F">Friday, Jun 19</option>
+                      <option disabled value="Sa">Saturday, Jun 20</option>
+                      <option value="S">Sunday, Jun 21</option>
+                    </select>
+                  </div>
                 </div>
               </>
             )}
