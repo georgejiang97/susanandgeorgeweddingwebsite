@@ -75,7 +75,7 @@ const RSVP: React.FC = () => {
       email: formData.email,
       attending: formData.attending === "yes" ? "attending" : "not attending",
       dietaryRestrictions: formData.dietaryRestrictions,
-      additionalEvents: Array.from(formData.additionalEvents).join(", "),
+      additionalEvents: formData.additionalEvents.length === 0 ? Array.from(formData.additionalEvents).join(", ") : 'N/A',
       message: formData.message
     };
     fetch(WEB_APP_RSVP_URL, {
