@@ -31,11 +31,12 @@ const Schedule: React.FC = () => {
 
         <div className="schedule-timeline">
           <div className="schedule-item">
-            <div className="schedule-time">2:30 PM</div>
+            <div className="schedule-time">2:15 PM</div>
             <div className="schedule-content">
               <h3>Guest Arrival</h3>
               <p>Please arrive at Mainspace, if you require a shuttle to get to the ceremony site.
-                The ceremony will take place at Banff Gate Mountain (https://maps.app.goo.gl/wotoQSr3x6Xiwizu6)
+                The ceremony will take place at Quarry Lake Park (https://maps.app.goo.gl/QY8Bs9CZVoAtNuJ36). If you're driving to the park instead, please not
+                that parking is limited and expensive.
               </p>
             </div>
           </div>
@@ -44,7 +45,7 @@ const Schedule: React.FC = () => {
             <div className="schedule-time">3:00 PM</div>
             <div className="schedule-content">
               <h3>Ceremony Begins</h3>
-              <p>Please arrive at Banff Gate Mountain by 3:00 PM and be seated for the ceremony.</p>
+              <p>Please arrive at Quarry Lake Park by 3:00 PM and be seated for the ceremony.</p>
             </div>
           </div>
 
