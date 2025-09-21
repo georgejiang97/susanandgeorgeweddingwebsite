@@ -74,7 +74,7 @@ const RSVP: React.FC = () => {
     const data = {
       name: formData.name,
       email: formData.email,
-      attending: formData.attending,
+      attending: formData.attending === "yes" ? "attending" : "not attending",
       dietaryRestrictions: formData.dietaryRestrictions,
       additionalEvents: Array.from(formData.additionalEvents).join(","),
       message: formData.message
@@ -186,20 +186,82 @@ const RSVP: React.FC = () => {
                   <label htmlFor="additionalEvents">Additional Events</label>
                   <p>Susan & George are eager to plan some pre and post wedding events for guests to enjoy the beauty of Banff National Park! If you're interested in attending, please select which dates you think you'd be able to attend.</p>
                   <p>We will reach out in the upcoming months for additional details and RSVPs to these events.</p>
-                  <div className="additional-events-wrapper">
-                    <select
-                      id="additionalEvents"
-                      name="additionalEvents"
-                      multiple={true}
-                      value={formData.additionalEvents}
-                      onChange={handleMultiSelectChange}
-                      >
-                      <option value="W"><p>Wednesday</p><p>Jun 17, 2026</p></option>
-                      <option value="Th">Thursday, Jun 18</option>
-                      <option value="F">Friday, Jun 19</option>
-                      <option disabled value="Sa">Saturday, Jun 20</option>
-                      <option value="S">Sunday, Jun 21</option>
-                    </select>
+                  <div className="additional-events-cards">
+                    <div className="event-card">
+                      <input
+                        type="checkbox"
+                        id="event-W"
+                        name="additionalEvents"
+                        value="W"
+                        checked={formData.additionalEvents.has("W")}
+                        onChange={handleMultiSelectChange}
+                      />
+                      <label htmlFor="event-W" className="event-card-label">
+                        <div className="event-day">Wednesday</div>
+                        <div className="event-date">Jun 17, 2026</div>
+                      </label>
+                    </div>
+
+                    <div className="event-card">
+                      <input
+                        type="checkbox"
+                        id="event-Th"
+                        name="additionalEvents"
+                        value="Th"
+                        checked={formData.additionalEvents.has("Th")}
+                        onChange={handleMultiSelectChange}
+                      />
+                      <label htmlFor="event-Th" className="event-card-label">
+                        <div className="event-day">Thursday</div>
+                        <div className="event-date">Jun 18, 2026</div>
+                      </label>
+                    </div>
+
+                    <div className="event-card">
+                      <input
+                        type="checkbox"
+                        id="event-F"
+                        name="additionalEvents"
+                        value="F"
+                        checked={formData.additionalEvents.has("F")}
+                        onChange={handleMultiSelectChange}
+                      />
+                      <label htmlFor="event-F" className="event-card-label">
+                        <div className="event-day">Friday</div>
+                        <div className="event-date">Jun 19, 2026</div>
+                      </label>
+                    </div>
+
+                    <div className="event-card wedding-day">
+                      <input
+                        type="checkbox"
+                        id="event-Sa"
+                        name="additionalEvents"
+                        value="Sa"
+                        disabled
+                        checked={false}
+                      />
+                      <label htmlFor="event-Sa" className="event-card-label disabled">
+                        <div className="event-day">Saturday</div>
+                        <div className="event-date">Jun 20, 2026</div>
+                        <div className="wedding-indicator">Wedding Day</div>
+                      </label>
+                    </div>
+
+                    <div className="event-card">
+                      <input
+                        type="checkbox"
+                        id="event-S"
+                        name="additionalEvents"
+                        value="S"
+                        checked={formData.additionalEvents.has("S")}
+                        onChange={handleMultiSelectChange}
+                      />
+                      <label htmlFor="event-S" className="event-card-label">
+                        <div className="event-day">Sunday</div>
+                        <div className="event-date">Jun 21, 2026</div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </>
