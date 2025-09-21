@@ -22,10 +22,12 @@
 .section-title {
   text-align: center;
   font-size: 3rem;
-  color: #44576D;
+  color: #1a1a1a;
   margin-bottom: 50px;
   font-family: 'Playfair Display', serif;
   position: relative;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .section-title::after {
@@ -219,6 +221,7 @@
   color: #44576D;
   background: linear-gradient(to right, #768A96, #AAC7D8);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0 5px;
   font-size: 1.1rem;

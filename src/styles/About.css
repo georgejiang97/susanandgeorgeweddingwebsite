@@ -1,6 +1,6 @@
 .about {
   padding: 120px 20px 80px;
-  background-color: #DFEBF6;
+  background-color: #E6E6E6;
   position: relative;
 }
 
@@ -22,10 +22,12 @@
 .section-title {
   text-align: center;
   font-size: 3rem;
-  color: #44576D;
+  color: #1a1a1a;
   margin-bottom: 60px;
   font-family: 'Playfair Display', serif;
   position: relative;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .section-title::after {
@@ -176,19 +178,19 @@
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: 120px;
+  left: 140px;
   top: 0;
   bottom: -40px;
   width: 1px;
-  background: linear-gradient(to bottom, #768A96, rgba(118, 138, 150, 0.3));
+  background-color: #768A96;
 }
 
 .timeline-item:last-child::before {
-  display: none;
+  bottom: -10px;
 }
 
 .timeline-date {
-  width: 120px;
+  width: 140px;
   padding-right: 30px;
   font-weight: 500;
   color: #44576D;
@@ -207,23 +209,12 @@
   box-shadow: 0 10px 20px rgba(41, 53, 60, 0.1);
   border: 1px solid rgba(118, 138, 150, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 10px;
 }
 
 .timeline-content:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(41, 53, 60, 0.2);
-}
-
-.timeline-content::before {
-  content: '';
-  position: absolute;
-  left: -10px;
-  top: 20px;
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(135deg, #768A96, #AAC7D8);
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(170, 199, 216, 0.5);
 }
 
 .timeline-content h3 {
@@ -245,11 +236,19 @@
   }
 
   .timeline-item::before {
-    left: 80px;
+    left: 100px;
   }
 
   .timeline-date {
-    width: 80px;
+    width: 100px;
     font-size: 0.85rem;
+  }
+
+  .timeline-content {
+    margin-left: 5px;
+  }
+
+  .timeline-content::before {
+    left: -10px;
   }
 }
