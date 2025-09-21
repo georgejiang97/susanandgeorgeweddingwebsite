@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/susanandgeorgeweddingwebsite/static/css/main.b2a68b04.css",
+    "main.js": "/susanandgeorgeweddingwebsite/static/js/main.7ec26f6c.js",
+    "static/js/453.7c9966f9.chunk.js": "/susanandgeorgeweddingwebsite/static/js/453.7c9966f9.chunk.js",
+    "index.html": "/susanandgeorgeweddingwebsite/index.html",
+    "main.b2a68b04.css.map": "/susanandgeorgeweddingwebsite/static/css/main.b2a68b04.css.map",
+    "main.7ec26f6c.js.map": "/susanandgeorgeweddingwebsite/static/js/main.7ec26f6c.js.map",
+    "453.7c9966f9.chunk.js.map": "/susanandgeorgeweddingwebsite/static/js/453.7c9966f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2a68b04.css",
+    "static/js/main.7ec26f6c.js"
+  ]
+}
