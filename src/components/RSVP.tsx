@@ -37,7 +37,6 @@ const RSVP: React.FC = () => {
   }).format(RSVP_DEADLINE);
 
   const [formData, setFormData] = useState(initialFormData) as any[];
-  console.log(formData)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -76,7 +75,7 @@ const RSVP: React.FC = () => {
       email: formData.email,
       attending: formData.attending === "yes" ? "attending" : "not attending",
       dietaryRestrictions: formData.dietaryRestrictions,
-      additionalEvents: Array.from(formData.additionalEvents).join(","),
+      additionalEvents: Array.from(formData.additionalEvents).join(", "),
       message: formData.message
     };
     fetch(WEB_APP_RSVP_URL, {
@@ -192,8 +191,8 @@ const RSVP: React.FC = () => {
                         type="checkbox"
                         id="event-W"
                         name="additionalEvents"
-                        value="W"
-                        checked={formData.additionalEvents.has("W")}
+                        value="Wednesday, June 17, 2026"
+                        checked={formData.additionalEvents.has("Wednesday, June 17, 2026")}
                         onChange={handleMultiSelectChange}
                       />
                       <label htmlFor="event-W" className="event-card-label">
@@ -207,8 +206,8 @@ const RSVP: React.FC = () => {
                         type="checkbox"
                         id="event-Th"
                         name="additionalEvents"
-                        value="Th"
-                        checked={formData.additionalEvents.has("Th")}
+                        value="Thursday, June 18, 2026"
+                        checked={formData.additionalEvents.has("Thursday, June 18, 2026")}
                         onChange={handleMultiSelectChange}
                       />
                       <label htmlFor="event-Th" className="event-card-label">
@@ -222,8 +221,8 @@ const RSVP: React.FC = () => {
                         type="checkbox"
                         id="event-F"
                         name="additionalEvents"
-                        value="F"
-                        checked={formData.additionalEvents.has("F")}
+                        value="Friday, June 19, 2026"
+                        checked={formData.additionalEvents.has("Friday, June 19, 2026")}
                         onChange={handleMultiSelectChange}
                       />
                       <label htmlFor="event-F" className="event-card-label">
@@ -253,8 +252,8 @@ const RSVP: React.FC = () => {
                         type="checkbox"
                         id="event-S"
                         name="additionalEvents"
-                        value="S"
-                        checked={formData.additionalEvents.has("S")}
+                        value="Sunday, June 21, 2026"
+                        checked={formData.additionalEvents.has("Sunday, June 21, 2026")}
                         onChange={handleMultiSelectChange}
                       />
                       <label htmlFor="event-S" className="event-card-label">
