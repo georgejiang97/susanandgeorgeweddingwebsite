@@ -1,7 +1,7 @@
 {
   "name": "wedding_website",
   "version": "0.1.0",
-  "homepage": "https://georgejiang97.github.io/susanandgeorgeweddingwebsite",
+  "homepage": "https://georgeandsusanwedding.com",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
