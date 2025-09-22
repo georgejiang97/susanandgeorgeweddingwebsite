@@ -182,16 +182,24 @@
   display: flex;
   justify-content: center;
   gap: 25px;
+  flex-wrap: wrap;
 }
 
 .countdown-item {
   background-color: #252525;
-  padding: 25px;
+  padding: 25px 15px;
   border-radius: 8px;
-  min-width: 120px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 .countdown-item:hover {
@@ -201,19 +209,23 @@
 
 .count {
   display: block;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
   color: #d4af37;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+  margin-bottom: 8px;
 }
 
 .label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #cccccc;
-  margin-top: 8px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Carousel navigation dots */
@@ -251,10 +263,44 @@
   }
 
   .countdown-timer {
-    flex-wrap: wrap;
+    gap: 15px;
   }
 
   .countdown-item {
-    min-width: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 20px 10px;
+  }
+
+  .count {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-timer {
+    gap: 10px;
+  }
+
+  .countdown-item {
+    width: 85px;
+    height: 85px;
+    padding: 15px 8px;
+  }
+
+  .count {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+  }
+
+  .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2px;
   }
 }
