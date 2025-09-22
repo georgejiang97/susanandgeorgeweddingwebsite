@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { WEDDING_DATE, RSVP_DEADLINE, WEB_APP_RSVP_URL } from '../constants';
 import '../styles/RSVP.css';
 
+const EASTER_EGG_COUNT_THRESHOLD = 4;
+
 type FormData = {
   name: string
   email: string
@@ -46,6 +48,7 @@ const RSVP: React.FC = () => {
 
   const [formData, setFormData] = useState(initialFormData) as any[];
   const [showModal, setShowModal] = useState(false);
+  const [easterEggClickcount, setEasterEggClickCount] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -60,7 +63,6 @@ const RSVP: React.FC = () => {
     const { name, value } = e.target;
 
     let currValue: Set<string> = new Set(formData[name]);
-    console.log(currValue)
 
     if (currValue.has(value)) {
       currValue.delete(value)
@@ -72,6 +74,12 @@ const RSVP: React.FC = () => {
       ...formData,
       [name]: currValue
     });
+  };
+
+  const handleEasterEggClicked = (date: string) => {
+    if (date === "Saturday, Jun 20 2026") {
+      setEasterEggClickCount(easterEggClickcount + 1);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -98,7 +106,6 @@ const RSVP: React.FC = () => {
         }
       });
 
-      console.log('Form submitted:', formData);
       setShowModal(true);
       setFormData(initialFormData);
     } catch (error) {
@@ -109,6 +116,8 @@ const RSVP: React.FC = () => {
       setIsSubmitting(false);
     }
   };
+
+  const didFindEasterEgg = easterEggClickcount >= EASTER_EGG_COUNT_THRESHOLD
 
   return (
     <div id="rsvp" className="rsvp">
@@ -210,17 +219,16 @@ const RSVP: React.FC = () => {
                     {additionalEventsOptions.map(eventDate => {
                       const [day, date] = eventDate.split(", ")
                       const isWeddingDate = day === "Saturday" && date === "Jun 20 2026"
-                      return <div className={`event-card${isWeddingDate ? " wedding-day" : ""}`}>
+                      return <div key={eventDate} className={`event-card${isWeddingDate && !didFindEasterEgg ? " wedding-day" : ""}`} onClick={() => handleEasterEggClicked(eventDate)}>
                         <input
                           type="checkbox"
                           id={"event-" + eventDate}
                           name="additionalEvents"
                           value={eventDate}
-                          disabled={isWeddingDate}
-                          checked={formData.additionalEvents.has(eventDate)}
+                          disabled={isWeddingDate && !didFindEasterEgg}
                           onChange={handleMultiSelectChange}
                         />
-                        <label htmlFor={`event-${eventDate}`} className={`event-card-label${isWeddingDate ? " disabled" : ""}`}>
+                        <label htmlFor={`event-${eventDate}`} className={`event-card-label${isWeddingDate && !didFindEasterEgg ? " disabled" : ""}`}>
                           <div className="event-day">{day}</div>
                           <div className="event-date">{date}</div>
                           {isWeddingDate && <div className="wedding-indicator">Wedding Day</div>}
@@ -228,6 +236,7 @@ const RSVP: React.FC = () => {
                       </div>
                     })}
                   </div>
+                  {didFindEasterEgg && <p className="wedding-indicator">You found the Easter Egg! Submit "Saturday" alongside another other date options for a prize on the day of the wedding!</p>}
                 </div>
               </>
             )}
