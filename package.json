@@ -25,7 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "add-domain": "echo \"georgeandsusanwedding.com\" > build/CNAME",
+    "deploy": "npm run add-domain && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
