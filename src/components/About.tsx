@@ -1,6 +1,7 @@
 import React from 'react';
-import { WEDDING_DATE, COUPLE_PHOTO } from '../constants';
+import { COUPLE_PHOTO, WEDDING_DATE } from '../constants';
 import '../styles/About.css';
+import '../styles/Timeline.css';
 
 const About: React.FC = () => {
   // Format the wedding date for display
@@ -43,7 +44,7 @@ const About: React.FC = () => {
           <h2>Our Journey Together</h2>
 
           <div className="timeline-item">
-            <div className="timeline-date">Summer 2018</div>
+            <div className="timeline-time">Summer 2018</div>
             <div className="timeline-content">
               <h3>First Meeting</h3>
               <p>We met during an intern event, and became friends through DDR and trauma from working at Meta.</p>
@@ -51,7 +52,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="timeline-item">
-            <div className="timeline-date">Fall 2018</div>
+            <div className="timeline-time">Fall 2018</div>
             <div className="timeline-content">
               <h3>COVID</h3>
               <p>COVID era and going back to our regular school schedule meant we couldn't hang out much :(</p>
@@ -59,7 +60,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="timeline-item">
-            <div className="timeline-date">Summer 2021</div>
+            <div className="timeline-time">Summer 2021</div>
             <div className="timeline-content">
               <h3>Susan ✈️ Seattle</h3>
               <p>Susan and Taro took the big step of moving to Seattle, where George asked both of them on a date.
@@ -69,7 +70,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="timeline-item">
-            <div className="timeline-date">Fall 2024</div>
+            <div className="timeline-time">Fall 2024</div>
             <div className="timeline-content">
               <h3>The Proposal</h3>
               <p>During our trip to China, George proposed in his hometown Qingdao! When he pulled out the ring, Susan said
@@ -79,7 +80,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="timeline-item">
-            <div className="timeline-date">January 13th, 2025</div>
+            <div className="timeline-time">January 13th, 2025</div>
             <div className="timeline-content">
               <h3>The Wedding</h3>
               <p>The day we officially became husband and wife!
@@ -88,7 +89,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="timeline-item">
-            <div className="timeline-date">{formattedWeddingDate}</div>
+            <div className="timeline-time">{formattedWeddingDate}</div>
             <div className="timeline-content">
               <h3>The Wedding...Again!</h3>
               <p>The day we officially will become husband and wife...again!</p>

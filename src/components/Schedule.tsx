@@ -1,6 +1,7 @@
 import React from 'react';
 import { QUARRY_LAKE_IMAGE } from '../constants';
 import '../styles/Schedule.css';
+import '../styles/Timeline.css';
 
 const Schedule: React.FC = () => {
   return (
@@ -40,10 +41,10 @@ const Schedule: React.FC = () => {
           </div>
         </div>
 
-        <div className="schedule-timeline">
-          <div className="schedule-item">
-            <div className="schedule-time">2:15 PM</div>
-            <div className="schedule-content">
+        <div className="timeline">
+          <div className="timeline-item">
+            <div className="timeline-time">2:15 PM</div>
+            <div className="timeline-content">
               <h3>Guest Arrival</h3>
               <p>Please arrive at Mainspace, if you require a shuttle to get to the ceremony site.
                 The ceremony will take place at <a href="https://maps.app.goo.gl/YdcN9G7cfyj9vbZt7" target="_blank" rel="noopener noreferrer">Quarry Lake Park</a>. If you're driving to the park instead, please note
@@ -52,17 +53,17 @@ const Schedule: React.FC = () => {
             </div>
           </div>
 
-          <div className="schedule-item">
-            <div className="schedule-time">3:00 PM</div>
-            <div className="schedule-content">
+          <div className="timeline-item">
+            <div className="timeline-time">3:00 PM</div>
+            <div className="timeline-content">
               <h3>Ceremony Begins</h3>
               <p>Please arrive at Quarry Lake Park by 3:00 PM and be seated for the ceremony. Note that it is a short walk from the parking lot to the ceremony location on unpaved ground.</p>
             </div>
           </div>
 
-          <div className="schedule-item">
-            <div className="schedule-time">5:00 PM to 10:00 PM</div>
-            <div className="schedule-content">
+          <div className="timeline-item">
+            <div className="timeline-time">5:00 PM - 10:00 PM</div>
+            <div className="timeline-content">
               <h3>Reception</h3>
               <p>Dinner, speeches, and celebration at Mainspace!</p>
             </div>
