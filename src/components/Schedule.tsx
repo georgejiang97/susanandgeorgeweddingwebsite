@@ -25,7 +25,7 @@ const Schedule: React.FC = () => {
             <p className="venue-name">MAINSPACE | Canmore Wedding Venue + Event Space</p>
             <p className="venue-address">102-709 Main Street, Canmore, AB T1W 2B2</p>
             <p className="venue-phone">(403) 675-0333</p>
-            <p className="venue-website"><a href="https://www.mainspacecanmore.com" target="_blank" rel="noopener noreferrer">www.mainspacecanmore.com</a></p>
+            <p className="venue-website"><a href="https://www.mainspacecanmore.ca" target="_blank" rel="noopener noreferrer">www.mainspacecanmore.ca</a></p>
           </div>
           <div className="venue-map">
             <iframe
