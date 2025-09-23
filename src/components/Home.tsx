@@ -59,7 +59,8 @@ const Home: React.FC = () => {
   const formattedWeddingDate = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
+    timeZone: 'American/Denver',
   }).format(WEDDING_DATE);
 
   const navigateToRSVP = () => {
