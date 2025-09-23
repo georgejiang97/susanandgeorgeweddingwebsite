@@ -9,7 +9,7 @@ const About: React.FC = () => {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-    timeZone: 'American/Denver',
+    timeZone: 'America/Denver',
   }).format(WEDDING_DATE);
 
   return (
